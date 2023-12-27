@@ -101,6 +101,7 @@ export default {
       editedMovement: {},
       showDetailsSection: false,
       movementDetails: {},
+      
     };
   },
   mounted() {
@@ -110,7 +111,7 @@ export default {
                 this.$router.push("/")
             }
     UserService.getMovements(this.$store.state.username).then((res) => {
-                this.investmentHistory = res.data
+                this.movements = res.data
                 this.availableCryptos = UserService.cryptos;
             })
     .catch(error => {
